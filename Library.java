@@ -1,7 +1,23 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Library {
+public class Library implements Serializable {
     private static ArrayList<Library> libraryExtent = new ArrayList<Library>();
+
+    //atrybut złożony
+    Bookcase bookcase;
+
+    public void addBookcaseToLibrary(Bookcase bookcase){
+        this.bookcase = bookcase;
+    }
+
+    public static int numberOfBookcasesInLibrary = 2;
+    
+    //metoda klasowa
+    public static int maxNumberOfBooksInEntireLibrary(){
+        return Bookcase.maxNumberOfBooksInBookcase * numberOfBookcasesInLibrary;
+    }
+ 
 
     private static void addLibrary(Library library){
         libraryExtent.add(library);
@@ -10,7 +26,7 @@ public class Library {
     private static void removeLibrary(Library library){
         libraryExtent.remove(library);
     }
-
+    
     public static void showExtent() {
  
         System.out.println("Extent of the class: " + Library.class.getName());
@@ -19,4 +35,6 @@ public class Library {
             System.out.println(library);
         }
     }            
+
+
 }
