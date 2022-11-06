@@ -11,4 +11,13 @@ public class Bookcase {
     private static void removeBookcase(Bookcase bookcase){
         bookcaseExtent.remove(bookcase);
     }
+
+    public static void showExtent() {
+ 
+        System.out.println("Extent of the class: " + Bookcase.class.getName());
+ 
+        for (Bookcase bookcase : bookcaseExtent) {
+            System.out.println(bookcase);
+        }
+    }            
 }
